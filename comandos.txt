@@ -1,0 +1,8 @@
+npm init -y
+npm i typescript -D -E
+// añadir "tsc":"tsc" en scripts del package.json
+npm run tsc -- --init
+npm install express -E
+npm install @types/express -D -E
+npm install ts-node-dev -D -E
+npm install dotenv -E
