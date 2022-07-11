@@ -9,11 +9,19 @@ app.use(express.json());
 const PORT = process.env.SERVER_PORT || 4000;
 
 app.get('/', (req, res) => {
-  res.send('main');
+  res.status(200).json({
+    status: 'ok',
+    message: 'Hello',
+    env: process.env.MESSAGE || 'localhost',
+  });
 });
 
 app.get('/ping', (req, res) => {
-  res.send('pong');
+  res.status(200).json({
+    status: 'ok',
+    message: `Png ${req.headers['x-forwarded-for']}`,
+    env: process.env.MESSAGE || 'localhost',
+  });
 });
 
 app.listen(PORT, () => {
